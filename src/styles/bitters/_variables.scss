@@ -1,0 +1,54 @@
+// Breakpoints
+$medium-screen: 600px;
+$large-screen: 900px;
+
+// Typography
+$base-font-family: "Roboto";
+$heading-font-family: "Roboto Slab";
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$orange: #FF8266;
+$snow: #F7F7F7;
+$dark-snow: #F5F5F5;
+$light-gray: #ddd;
+$medium-gray: #242424;
+$dark-gray: #1A1A1A;
+
+// Font Colors
+$base-font-color: $snow;
+$secondary-font-color: $medium-gray;
+$action-color: $orange;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: $dark-gray;
+$secondary-background-color: $dark-snow;
+
+// Focus
+$focus-outline-color: transparentize($action-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+// Project settings
+$project-bg-padding: 1rem;
+$project-gradient-padding-ver: 2.5rem;
+$project-gradient-padding-hor: 2rem;
+$project-mobile-image-height: 85%;

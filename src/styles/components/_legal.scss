@@ -1,0 +1,19 @@
+.legal {
+	background-color: $secondary-background-color;
+	padding: 2rem 10px;
+	position: relative;
+	@include breakpoint(400px) {
+	    padding: 2rem 20px;
+	}
+}
+.legal > .container {
+	@include grid-container;
+	margin-top: 1.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 650px;
+	@include breakpoint(1020px) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}

@@ -1,0 +1,110 @@
+body {
+    overflow-x: hidden;
+}
+body::before {
+    background-image: url("../img/triangle.svg");
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+	content: "";
+	height: 100vw;
+	max-height: 1000px;
+	max-width: 1000px;
+	min-height: 800px;
+	min-width: 800px;
+	width: 100vw;
+	position: absolute;
+	top: 5vh;
+	z-index: -1;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: .5;
+}
+
+.triangles {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 5s;
+    &.triangles--hidden {
+        opacity: 0;
+    }
+}
+
+.triangle {
+    position: absolute;
+    backface-visibility: hidden;
+    min-width: 900px;
+    min-height: 900px;
+    max-width: 1600px;
+    max-height: 1600px;
+    width: 80vw;
+    height: 80vw;
+    // @include drop-shadow(0, 0, 5px, rgba(0, 0, 0, 0.2), "#drop-shadow");
+}
+
+.triangle {
+    animation-duration: 600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.triangle--light {
+    opacity: 0.02;
+    @include drop-shadow(0, 0, 1px, rgba(0, 0, 0, 0), "#drop-shadow");
+}
+
+.triangle--left {
+    top: 60vh;
+    left: -30%;
+    // animation-name: rotate;
+}
+
+.triangle--top-left {
+    top: -40vh;
+    left: -20%;
+    // animation-name: rotate--200;
+}
+
+.triangle--right {
+    // animation-name: rotate--100;
+    top: 30vh;
+    right: -15%;
+}
+
+@keyframes rotate {
+    0% {
+        transform-origin: 50% 50%;
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    100% {
+        transform-origin: 50% 50%;
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+}
+
+@keyframes rotate--100 {
+    0% {
+        transform-origin: 50% 50%;
+        transform: rotate3d(0, 0, 1, -250deg);
+    }
+    100% {
+        transform-origin: 50% 50%;
+        transform: rotate3d(0, 0, 1, 110deg);
+    }
+}
+
+@keyframes rotate--200 {
+    0% {
+        transform-origin: 50% 50%;
+        transform: rotate3d(0, 0, 1, -150deg);
+    }
+    100% {
+        transform-origin: 50% 50%;
+        transform: rotate3d(0, 0, 1, 210deg);
+    }
+}

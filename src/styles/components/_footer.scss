@@ -1,0 +1,386 @@
+body.home .page-footer {
+    position: relative;
+    .page-footer__nav,
+    .copyright {
+        background-color: #242424;
+    }
+    .copyright {
+        padding-bottom: 3rem;
+        margin-bottom: 0;
+    }
+}
+
+body:not(.home) {
+    .page-footer {
+        padding-top: 4rem;
+        padding-bottom: 1rem;
+        background-color: $secondary-background-color;
+    }
+    .page-footer__nav {
+        padding: 4rem 0 1rem;
+    }
+}
+
+.page-footer {
+    text-align: center;
+    color: lighten($secondary-font-color, 40%);
+}
+
+.footer-logo {
+    margin: 0 auto;
+}
+
+.copyright {
+    font-family: $heading-font-family;
+}
+
+.page-footer__nav {
+    padding: 4rem 0 1rem;
+    @include breakpoint(800px) {
+        padding: 0 0 1rem;
+    }
+    text-align: center;
+    li {
+        display: inline-block;
+    }
+    li a {
+        color: lighten($secondary-font-color, 40%);
+        text-decoration: none;
+        display: block;
+        padding: .66rem;
+        &:hover {
+            color: lighten($secondary-font-color, 10%);
+        }
+        &:focus {
+        	outline-offset: -5px;
+        }
+        &:active {
+            text-decoration: underline;
+        }
+    }
+}
+
+.boat-animation {
+    height: 335px;
+    position: relative;
+    overflow: hidden;
+}
+
+.waves--front {
+    @include drop-shadow(0, 0, 10px, rgba(0, 0, 0, 0.2), "#drop-shadow");
+    animation-name: sway--front;
+    z-index: 3;
+}
+
+.waves--rear {
+    @include drop-shadow(0, 0, 10px, rgba(0, 0, 0, 0.5), "#drop-shadow");
+    animation-name: sway--rear;
+    // animation-delay: 800ms;
+    z-index: 1;
+}
+
+.waves {
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: none;
+    height: auto;
+    pointer-events: none;
+    width: 600px;
+}
+
+.paperboat {
+    position: absolute;
+    height: auto;
+    z-index: 2;
+    animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+    animation-name: swim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    width: 80px;
+    bottom: 54px;
+    left: calc(85px + (100vw - 320px) * 0.3);
+}
+
+.paperboat {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.paperboat__flag {
+    position: absolute;
+    top: 1px;
+    width: 26px;
+    height: auto;
+    z-index: -1;
+    opacity: 0;
+    right: 10%;
+    transform: translateY(130%);
+    @include breakpoint(440px) {
+    	width: 29px
+    }
+    @include breakpoint(800px) {
+    	top: -2px;
+    	width: 32px;
+    }
+    @include breakpoint(1200px) {
+    	right: 15%;
+    	top: -4px;
+    	width: 34px;
+    }
+    @include breakpoint(1970px) {
+    	top: -6px;
+    	width: 36px;
+    }
+}
+
+.paperboat.paperboat--sos {
+	&:hover {
+	    cursor: default;
+	}
+    .paperboat__sink {
+        animation-name: sink;
+        animation-duration: 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        animation-delay: 1s;
+    }
+    .paperboat__flag {
+        animation-timing-function: ease-in-out;
+        animation-name: hoist;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-duration: .3s;
+    }
+}
+
+@keyframes hoist {
+    0% {
+        transform: translateY(130%) rotate(0);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(10deg);
+    }
+}
+
+@keyframes sink {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+    30% {
+        transform: rotate(-15deg) translate(-5%, 20%);
+    }
+    60% {
+        transform: rotate(15deg) translate(0%, 50%);
+    }
+    99% {
+    	opacity: 1;
+    }
+    100% {
+    	opacity: 0;
+        transform: rotate(-20deg) translate(-5%, 120%);
+    }
+}
+
+@include breakpoint(440px) {
+    .waves {
+        width: 1000px;
+    }
+    .paperboat {
+        width: 100px;
+        bottom: 110px;
+        left: calc(90px + (100vw - 320px) * 0.3);
+    }
+    @keyframes swim {
+        0% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -8deg) translateY(10px);
+        }
+        46% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -1deg) translateY(18px);
+        }
+        100% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -8deg) translateY(10px);
+        }
+    }
+}
+
+@include breakpoint(560px) {
+    .paperboat {
+        left: calc(100px + (100vw - 320px) * 0.4);
+    }
+}
+
+@include breakpoint(800px) {
+    .waves--front {
+        @include drop-shadow(0, 0, 10px, rgba(0, 0, 0, 0.1), "#drop-shadow");
+    }
+    .waves--rear {
+        @include drop-shadow(0, 0, 10px, rgba(0, 0, 0, 0.2), "#drop-shadow");
+    }
+    .waves {
+        width: 1500px;
+    }
+    .paperboat {
+        width: 110px;
+        bottom: 162px;
+        left: calc(100px + (100vw - 320px) * 0.4);
+    }
+    @keyframes swim {
+        0% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -8deg) translateY(0px);
+        }
+        46% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -1deg) translateY(15px);
+        }
+        100% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -8deg) translateY(0px);
+        }
+    }
+}
+
+@include breakpoint(1200px) {
+    .waves {
+        width: 1800px;
+    }
+    .paperboat {
+        width: 130px;
+        bottom: 194px;
+    }
+}
+
+@include breakpoint(1550px) {
+    .waves {
+        width: 2000px;
+    }
+    .paperboat {
+        width: 130px;
+        bottom: 215px;
+        left: calc(100px + (100vw - 320px) * 0.4);
+    }
+}
+
+@include breakpoint(1700px) {
+    .waves {
+        width: 2300px;
+        bottom: -33px;
+    }
+    .waves--front {
+        @include drop-shadow(0, 0, 10px, rgba(0, 0, 0, 0.01), "#drop-shadow");
+    }
+    .waves--rear {
+        @include drop-shadow(0, 0, 10px, rgba(0, 0, 0, 0.05), "#drop-shadow");
+    }
+}
+
+@include breakpoint(1970px) {
+    .waves {
+        width: 2600px;
+        bottom: -70px;
+    }
+    .paperboat {
+        width: 135px;
+        bottom: 212px;
+        left: calc(100px + (100vw - 320px) * 0.4);
+    }
+    @keyframes swim {
+        0% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -11deg) translateY(-1px);
+        }
+        48% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -2deg) translateY(19px);
+        }
+        100% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -11deg) translateY(-1px);
+        }
+    }
+}
+
+@include breakpoint(2230px) {
+    .waves {
+        width: 3000px;
+        bottom: -113px;
+    }
+    .paperboat {
+        width: 135px;
+        bottom: 214px;
+        left: calc(100px + (100vw - 320px) * 0.4);
+    }
+    @keyframes swim {
+        0% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -11deg) translateY(-1px);
+        }
+        48% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -2deg) translateY(19px);
+        }
+        100% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -11deg) translateY(-1px);
+        }
+    }
+}
+
+@include breakpoint(0px 439px) {
+    @keyframes swim {
+        0% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -8deg) translateY(7px);
+        }
+        46% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -1deg) translateY(12px);
+        }
+        100% {
+            transform-origin: center;
+            transform: rotate3d(0, 0, 1, -8deg) translateY(7px);
+        }
+    }
+}
+
+@keyframes sway--front {
+    0% {
+        transform-origin: center;
+        transform: translateX(calc(-46% - 3%));
+    }
+    50% {
+        transform-origin: center;
+        transform: translateX(calc(-46% + 3%));
+    }
+    100% {
+        transform-origin: center;
+        transform: translateX(calc(-46% - 3%));
+    }
+}
+
+@keyframes sway--rear {
+    0% {
+        transform-origin: center;
+        transform: translateX(calc(-54% + 3%));
+    }
+    50% {
+        transform-origin: center;
+        transform: translateX(calc(-54% - 3%));
+    }
+    100% {
+        transform-origin: center;
+        transform: translateX(calc(-54% + 3%));
+    }
+}

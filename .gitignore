@@ -1,0 +1,10 @@
+build
+laradock
+node_modules
+public/assets
+storage
+vendor
+public/favicon
+.env
+.idea
+.phpintel

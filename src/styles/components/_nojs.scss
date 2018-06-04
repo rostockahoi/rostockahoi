@@ -1,0 +1,26 @@
+body:not(.nojs) .nojs-warning {
+	display: none;
+	transform: translateY(1000%);
+	visibility: hidden;
+}
+.nojs-warning {
+	position: fixed;
+	left: 0;
+	right: 0;
+	background-color: $snow;
+	top: 0;
+	text-align: center;
+	padding: 1rem 3rem;
+	color: $secondary-font-color;
+	animation: slideIn .8s;
+	animation-delay: 5s;
+	animation-fill-mode: backwards;
+	p {
+		margin-bottom: 0;
+	}
+}
+
+@keyframes slideIn {
+	from { top: -100% }
+	to { top: 0 }
+}

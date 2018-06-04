@@ -1,0 +1,5 @@
+@mixin drop-shadow($x, $y, $blur, $color, $id) {
+	filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
+	filter: url($id);
+	filter: drop-shadow($x $y $blur $color);
+}

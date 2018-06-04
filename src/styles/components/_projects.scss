@@ -1,0 +1,242 @@
+.projects {
+    background-color: $secondary-background-color;
+    padding: 2rem 10px;
+    position: relative;
+    @include breakpoint(400px) {
+        padding: 2rem 20px;
+    }
+    h2 {
+        margin-bottom: 3rem;
+    }
+}
+
+.projects > .container {
+    @include grid-container;
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    min-height: 50vh;
+    @include breakpoint(1020px) {
+        max-width: 1400px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+body.nojs {
+	.project {
+		display: none;
+	}
+}
+
+.project {
+    text-align: right;
+    position: relative;
+    max-width: calc(700px);
+    margin-bottom: 2rem;
+    visibility: hidden;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    @include breakpoint(1020px) {
+        max-width: calc(50% - 2rem);
+        float: left;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+.project__bg {
+    background-color: $snow;
+    position: relative;
+    overflow: hidden;
+    padding: $project-bg-padding * .5;
+    @include breakpoint(420px) {
+        padding: $project-bg-padding;
+    }
+}
+
+.project__gradient {
+    overflow: hidden;
+    padding: $project-gradient-padding-ver * .6 $project-gradient-padding-hor * .8;
+    @include breakpoint(420px) {
+        padding: $project-gradient-padding-ver $project-gradient-padding-hor;
+    }
+}
+
+.project__image--desktop {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.65s cubic-bezier(1, 0, 0, 1);
+    opacity: 1;
+}
+
+.project__image--mobile {
+    position: absolute;
+    left: $project-bg-padding + $project-gradient-padding-hor;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.65s cubic-bezier(1, 0, 0, 1);
+    height: calc(100% - 1 * #{$project-bg-padding} - (100% - #{$project-mobile-image-height} * 1.05));
+    @include breakpoint(420px) {
+        height: calc(100% - 2 * #{$project-bg-padding} - (100% - #{$project-mobile-image-height}));
+    }
+}
+
+.project--right {
+    text-align: left;
+    .project__image--mobile {
+        right: $project-bg-padding + $project-gradient-padding-hor;
+        left: auto;
+        box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.project__info {
+    position: absolute;
+    text-align: left;
+    padding-left: $project-bg-padding * .5;
+    padding-top: $project-bg-padding * .5;
+    padding-bottom: $project-bg-padding * .5;
+    padding-right: 55px;
+    background-color: rgba($snow, .95);
+    opacity: 0;
+    color: $secondary-font-color;
+    top: $project-bg-padding * .5;
+    left: $project-bg-padding * .5;
+    width: calc(100% - #{$project-bg-padding});
+    height: calc(100% - #{$project-bg-padding});
+    color: lighten($secondary-font-color, 5%);
+    font-size: 90%;
+    transform: translateX(40%) rotate(1deg);
+    transition: all 0.65s cubic-bezier(1, 0, 0, 1);
+    overflow-y: auto;
+    h3,
+    h4 {
+        font-family: $base-font-family;
+        display: inline-block;
+        font-size: 105%;
+    }
+    h3 {
+        margin-bottom: 0.5rem;
+        small {
+            font-weight: normal;
+            font-size: 95%;
+        }
+    }
+    h4 {
+        margin-bottom: 0;
+        margin-right: 5px;
+    }
+    @include breakpoint(400px) {
+        padding-left: $project-bg-padding;
+        padding-top: $project-bg-padding;
+        padding-bottom: $project-bg-padding;
+        padding-right: 55px;
+        font-size: 100%;
+    }
+    @include breakpoint(768px) {
+        background-color: $snow;
+        width: 67%;
+        left: 33%;
+        padding: 2rem;
+        h3 {
+        	font-size: 110%;
+        }
+        h4 {
+        	display: block;
+        }
+    }
+    @include breakpoint(1020px 1200px) {
+        left: 38%;
+        width: 62%;
+    	padding: 1rem;
+    }
+}
+
+.project--right .project__info {
+    right: $project-bg-padding * .5;
+    left: initial;
+    transform: translateX(-40%) rotate(-1deg);
+    @include breakpoint(768px) {
+        right: 33%;
+    }
+    @include breakpoint(1020px 1200px) {
+    	right: 38%;
+    }
+}
+
+.project__link.project__link--cursor {
+    cursor: zoom-in;
+}
+
+.project__link:focus {
+	outline: 0;
+}
+
+.project__external {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transform: translate(2px, 2px);
+    transition: all 300ms;
+    background-color: $snow;
+    padding: 8px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    &:hover {
+        background-color: $orange;
+        svg {
+            fill: $snow;
+        }
+    }
+    @include breakpoint(400px) {
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
+
+.project:hover {
+    .project__external {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.project.project--view {
+    .project__external {
+        transform: translate(0, 0);
+        box-shadow: none;
+        opacity: 1;
+    }
+    .project__link.project__link--cursor {
+        cursor: zoom-out;
+    }
+    .project__info {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    @include breakpoint(768px) {
+        .project__image--desktop {
+            opacity: 0;
+            transform: translateX(33%);
+        }
+        .project__image--mobile {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+            transform: translateY(-50%) scale(1.05);
+        }
+    }
+}
+
+.project.project--right.project--view {
+    @include breakpoint(768px) {
+        .project__image--desktop {
+            transform: translateX(-33%);
+        }
+    }
+    .project__external {
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    }
+}

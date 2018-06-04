@@ -1,0 +1,23 @@
+{% extends '_layouts/_master.twig' %}
+
+{% block content %}
+
+	<main class="projects">
+		<div class="container">
+			<a href="/" class="close-button" title="Schließen">&times;</a>
+			<h2 class="slashes">Projekte</h2>
+			{% for project in projects %}
+				{% include "_partials/_project.twig" with project %}
+			{% endfor %}
+			<noscript>
+				<p>Für eine bessere Darstellung meiner Arbeiten aktivieren Sie bitte Javascript in Ihrem Browser.</p>
+				<ul>
+			{% for project in projects %}
+				<li><a href="{{ project.url }}">{{ project.name }}</a></li>
+			{% endfor %}
+				</ul>
+			</noscript>
+		</div>
+	</main>
+
+{% endblock %}

@@ -1,0 +1,343 @@
+
+.container {
+	@include grid-container;
+	margin: 0 auto;
+	max-width: 75rem;
+	width: 100%;
+}
+
+.sm-1 {
+	@include grid-column(1);
+}
+.sm-2 {
+	@include grid-column(2);
+}
+.sm-3 {
+	@include grid-column(3);
+}
+.sm-4 {
+	@include grid-column(4);
+}
+.sm-5 {
+	@include grid-column(5);
+}
+.sm-6 {
+	@include grid-column(6);
+}
+.sm-7 {
+	@include grid-column(7);
+}
+.sm-8 {
+	@include grid-column(8);
+}
+.sm-9 {
+	@include grid-column(9);
+}
+.sm-10 {
+	@include grid-column(10);
+}
+.sm-11 {
+	@include grid-column(11);
+}
+.sm-12 {
+	@include grid-column(12);
+}
+
+.sm-1-cl {
+	@include grid-column(1, $neat-collapse-grid);
+}
+.sm-2-cl {
+	@include grid-column(2, $neat-collapse-grid);
+}
+.sm-3-cl {
+	@include grid-column(3, $neat-collapse-grid);
+}
+.sm-4-cl {
+	@include grid-column(4, $neat-collapse-grid);
+}
+.sm-5-cl {
+	@include grid-column(5, $neat-collapse-grid);
+}
+.sm-6-cl {
+	@include grid-column(6, $neat-collapse-grid);
+}
+.sm-7-cl {
+	@include grid-column(7, $neat-collapse-grid);
+}
+.sm-8-cl {
+	@include grid-column(8, $neat-collapse-grid);
+}
+.sm-9-cl {
+	@include grid-column(9, $neat-collapse-grid);
+}
+.sm-10-cl {
+	@include grid-column(10, $neat-collapse-grid);
+}
+.sm-11-cl {
+	@include grid-column(11, $neat-collapse-grid);
+}
+.sm-12-cl {
+	@include grid-column(12, $neat-collapse-grid);
+}
+/*
+MEDIUM COLUMNS
+ */
+.md-1 {
+	@include breakpoint($medium) {
+		@include grid-column(1);
+	}
+}
+.md-2 {
+	@include breakpoint($medium) {
+		@include grid-column(2);
+	}
+}
+.md-3 {
+	@include breakpoint($medium) {
+		@include grid-column(3);
+	}
+}
+.md-4 {
+	@include breakpoint($medium) {
+		@include grid-column(4);
+	}
+}
+.md-5 {
+	@include breakpoint($medium) {
+		@include grid-column(5);
+	}
+}
+.md-6 {
+	@include breakpoint($medium) {
+		@include grid-column(6);
+	}
+}
+.md-7 {
+	@include breakpoint($medium) {
+		@include grid-column(7);
+	}
+}
+.md-8 {
+	@include breakpoint($medium) {
+		@include grid-column(8);
+	}
+}
+.md-9 {
+	@include breakpoint($medium) {
+		@include grid-column(9);
+	}
+}
+.md-10 {
+	@include breakpoint($medium) {
+		@include grid-column(10);
+	}
+}
+.md-11 {
+	@include breakpoint($medium) {
+		@include grid-column(11);
+	}
+}
+.md-12 {
+	@include breakpoint($medium) {
+		@include grid-column(12);
+	}
+}
+
+.md-1-cl {
+	@include breakpoint($medium) {
+		@include grid-column(1, $neat-collapse-grid);
+	}
+}
+.md-2-cl {
+	@include breakpoint($medium) {
+		@include grid-column(2, $neat-collapse-grid);
+	}
+}
+.md-3-cl {
+	@include breakpoint($medium) {
+		@include grid-column(3, $neat-collapse-grid);
+	}
+}
+.md-4-cl {
+	@include breakpoint($medium) {
+		@include grid-column(4, $neat-collapse-grid);
+	}
+}
+.md-5-cl {
+	@include breakpoint($medium) {
+		@include grid-column(5, $neat-collapse-grid);
+	}
+}
+.md-6-cl {
+	@include breakpoint($medium) {
+		@include grid-column(6, $neat-collapse-grid);
+	}
+}
+.md-7-cl {
+	@include breakpoint($medium) {
+		@include grid-column(7, $neat-collapse-grid);
+	}
+}
+.md-8-cl {
+	@include breakpoint($medium) {
+		@include grid-column(8, $neat-collapse-grid);
+	}
+}
+.md-9-cl {
+	@include breakpoint($medium) {
+		@include grid-column(9, $neat-collapse-grid);
+	}
+}
+.md-10-cl {
+	@include breakpoint($medium) {
+		@include grid-column(10, $neat-collapse-grid);
+	}
+}
+.md-11-cl {
+	@include breakpoint($medium) {
+		@include grid-column(11, $neat-collapse-grid);
+	}
+}
+.md-12-cl {
+	@include breakpoint($medium) {
+		@include grid-column(12, $neat-collapse-grid);
+	}
+}
+.md-center {
+	@include breakpoint($medium) {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+.md-uncenter {
+	@include breakpoint($medium) {
+		float: left;
+		// margin-left: initial;
+		// margin-right: auto;
+	}
+}
+/*
+LARGE COLUMNS
+ */
+.lg-1 {
+	@include breakpoint($large) {
+		@include grid-column(1);
+	}
+}
+.lg-2 {
+	@include breakpoint($large) {
+		@include grid-column(2);
+	}
+}
+.lg-3 {
+	@include breakpoint($large) {
+		@include grid-column(3);
+	}
+}
+.lg-4 {
+	@include breakpoint($large) {
+		@include grid-column(4);
+	}
+}
+.lg-5 {
+	@include breakpoint($large) {
+		@include grid-column(5);
+	}
+}
+.lg-6 {
+	@include breakpoint($large) {
+		@include grid-column(6);
+	}
+}
+.lg-7 {
+	@include breakpoint($large) {
+		@include grid-column(7);
+	}
+}
+.lg-8 {
+	@include breakpoint($large) {
+		@include grid-column(8);
+	}
+}
+.lg-9 {
+	@include breakpoint($large) {
+		@include grid-column(9);
+	}
+}
+.lg-10 {
+	@include breakpoint($large) {
+		@include grid-column(10);
+	}
+}
+.lg-11 {
+	@include breakpoint($large) {
+		@include grid-column(11);
+	}
+}
+.lg-12 {
+	@include breakpoint($large) {
+		@include grid-column(12);
+	}
+}
+
+.lg-1-cl {
+	@include breakpoint($large) {
+		@include grid-column(1, $neat-collapse-grid);
+	}
+}
+.lg-2-cl {
+	@include breakpoint($large) {
+		@include grid-column(2, $neat-collapse-grid);
+	}
+}
+.lg-3-cl {
+	@include breakpoint($large) {
+		@include grid-column(3, $neat-collapse-grid);
+	}
+}
+.lg-4-cl {
+	@include breakpoint($large) {
+		@include grid-column(4, $neat-collapse-grid);
+	}
+}
+.lg-5-cl {
+	@include breakpoint($large) {
+		@include grid-column(5, $neat-collapse-grid);
+	}
+}
+.lg-6-cl {
+	@include breakpoint($large) {
+		@include grid-column(6, $neat-collapse-grid);
+	}
+}
+.lg-7-cl {
+	@include breakpoint($large) {
+		@include grid-column(7, $neat-collapse-grid);
+	}
+}
+.lg-8-cl {
+	@include breakpoint($large) {
+		@include grid-column(8, $neat-collapse-grid);
+	}
+}
+.lg-9-cl {
+	@include breakpoint($large) {
+		@include grid-column(9, $neat-collapse-grid);
+	}
+}
+.lg-10-cl {
+	@include breakpoint($large) {
+		@include grid-column(10, $neat-collapse-grid);
+	}
+}
+.lg-11-cl {
+	@include breakpoint($large) {
+		@include grid-column(11, $neat-collapse-grid);
+	}
+}
+.lg-12-cl {
+	@include breakpoint($large) {
+		@include grid-column(12, $neat-collapse-grid);
+	}
+}

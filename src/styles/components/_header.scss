@@ -1,0 +1,82 @@
+.page-header {
+    @include grid-container;
+    padding: 15vh 20px;
+    position: relative;
+}
+
+.logo {
+    text-align: center;
+    margin: 0;
+    display: block;
+}
+
+body.home .logo {
+    visibility: hidden;
+}
+
+body.home {
+    .page-header {
+        background-color: transparent;
+        padding: 0 20px;
+    }
+    .logo {
+        margin-top: 33vh;
+    }
+}
+
+body.home {
+    .nav {
+        display: none;
+    }
+}
+
+.nav {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: $snow;
+    padding: 0px 18px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 7px rgba(0,0,0,0.7);
+    span {
+        transition: transform .2s;
+        display: block;
+    }
+    span::after {
+        content: attr(data-hover);
+        font-weight: bold;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+    &:hover,
+    &:focus {
+        span {
+            transform: translateY(-100%);
+        }
+    }
+    &.active {
+        font-weight: bold;
+        pointer-events: none;
+        &:hover,
+        &:focus {
+            span {
+                transform: none;
+            }
+        }
+    }
+}

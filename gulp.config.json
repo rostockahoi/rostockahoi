@@ -1,0 +1,50 @@
+{
+	"compileTemplates": true,
+    "url": 				"ahoi.dev",
+    "src": {
+        "styles": 		"src/styles",
+        "scripts": 		"src/scripts",
+        "templates": 	"src/templates",
+        "fonts": 		"src/fonts",
+        "images": {
+			    		"path":    "src/img",
+			    		"excludeOpti": [
+			    			"src/img/waves*",
+			    			"src/img/fb.png"
+			    		]
+    	},
+        "favicon": 		"src/favicon/favicon.png"
+    },
+    "dist": {
+    	"styles": 		"public/assets/css",
+    	"scripts": 		"public/assets/js",
+    	"templates": 	"build/templates",
+    	"fonts": 		"public/assets/fonts",
+    	"images": 		"public/assets/img",
+    	"favicon": 		"public/favicon"
+    },
+    "styles": {
+    	"compatibility": [
+	        "last 2 versions",
+	        "ie >= 9"
+	    ],
+	    "includePaths": [
+	    	"node_modules/bourbon-neat/core",
+	    	"node_modules/bourbon/app/assets/stylesheets",
+	    	"node_modules/normalize.css",
+	    	"node_modules/breakpoint-sass/stylesheets",
+	    	"node_modules/sweetalert2"
+	    ]
+    },
+    "favicon": {
+    	"templateFile": "_favicon.html",
+    	"background": "#1A1A1A",
+    	"theme_color": "#1A1A1A",
+    	"path": "favicon/",
+    	"display": "standalone",
+    	"orientation": "portrait",
+    	"start_url": "/?homescreen=1",
+    	"pipeHTML": true,
+    	"replace": true
+    }
+}

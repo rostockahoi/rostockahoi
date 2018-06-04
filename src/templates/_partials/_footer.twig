@@ -1,0 +1,24 @@
+<footer class="page-footer">
+	{% if bodyClass == "home" %}
+		<div class="boat-animation">
+			<img alt="Wellen" src="/assets/img/waves-rear.svg" class="waves waves--rear">
+			<div class="paperboat">
+				<div class="paperboat__sink">
+					<img alt="Papierboot" width="110" height="71" src="/assets/img/paperboat.svg" class="paperboat__boat" id="paperboat">
+					<img alt="Papierflagge" width="32" height="29" src="/assets/img/paperboat-flag.svg" class="paperboat__flag">
+				</div>
+			</div>
+			<img alt="Wellen" src="/assets/img/waves-front.svg" class="waves waves--front">
+		</div>
+	{% else %}
+		<img alt="Logo von Rostock Ahoi" class="footer-logo" src="/assets/img/logo-invert.svg" width="240">
+	{% endif %}
+	<ul class="page-footer__nav">
+		<li><a href="/">Startseite</a></li>
+		<li><a href="/projekte">Projekte</a></li>
+		<li>{% include "_partials/_email.twig" %}</li><br>
+		<li><a href="/impressum">Impressum</a></li>
+		<li><a href="/datenschutz">Datenschutz</a></li>
+	</ul>
+	<p class="copyright">&copy; {{ now|date('Y') }} Rostock Ahoi</p>
+</footer>

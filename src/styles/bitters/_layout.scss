@@ -1,0 +1,30 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: $base-background-color;
+    color: $base-font-color;
+}
+
+body:not(.home) {
+    color: $secondary-font-color;
+}
+
+// IE <main> fix
+main {
+	display: block;
+}
+
